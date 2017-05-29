@@ -1,0 +1,27 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page">
+  <StackLayout class="p-20">
+
+    <android>
+      <Label text="Please run this on an iOS device/simulator" textWrap="true"/>
+    </android>
+
+    <ios>
+      <Label text="Pick either of these and press the Home button to verify the icon updated" class="t-18 text-center c-black" textWrap="true"/>
+      <Label text="iOS 10.3 or higher required" class="text-center text-muted t-16" textWrap="true"/>
+
+      <GridLayout rows="*, *, *, *" columns="*, *" class="m-t-20" horizontalAlignment="stretch">
+        <Image row="0" col="0" tap="{{ changeIconRed }}"     src="~/images/icon-red-180.png"    horizontalAlignment="center" verticalAlignment="center"/>
+        <Image row="0" col="1" tap="{{ changeIconBlue }}"    src="~/images/icon-blue-180.png"   horizontalAlignment="center" verticalAlignment="center"/>
+        <Image row="1" col="0" tap="{{ changeIconGreen }}"   src="~/images/icon-green-180.png"  horizontalAlignment="center" verticalAlignment="center"/>
+        <Image row="1" col="1" tap="{{ changeIconPurple }}"  src="~/images/icon-purple-180.png" horizontalAlignment="center" verticalAlignment="center"/>
+        <Image row="2" col="0" tap="{{ changeIconYellow }}"  src="~/images/icon-yellow-180.png" horizontalAlignment="center" verticalAlignment="center"/>
+        <Image row="2" col="1" tap="{{ changeIconDefault }}" src="~/images/icon-180.png"        horizontalAlignment="center" verticalAlignment="center"/>
+        <StackLayout row="3" colSpan="2" orientation="horizontal" horizontalAlignment="center" verticalAlignment="center">
+          <Switch checked="{{ showFeedback }}" class="m-r-16"/>
+          <Label text="show feedback" class="{{ showFeedback ? 'c-black' : 'text-muted' }}" />
+        </StackLayout>
+      </GridLayout>
+    </ios>
+
+  </StackLayout>
+</Page>

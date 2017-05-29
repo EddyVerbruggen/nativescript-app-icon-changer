@@ -1,0 +1,8 @@
+﻿@import 'nativescript-theme-core/css/core.light.css';
+
+Image {
+  border: 2px solid #fff;
+  border-radius: 10;
+  width: 90;
+  height: 90;
+}
