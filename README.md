@@ -83,31 +83,31 @@ Then reference those icons in `App_Resources/iOS/Info.plist` as well:
 <dict>
 
   <!-- Add or merge this bit -->
-	<key>CFBundleIcons</key>
-	<dict>
-		<key>CFBundleAlternateIcons</key>
-		<dict>
-		  <!-- The name you use in code -->
-			<key>icon-blue</key>
-			<dict>
-				<key>UIPrerenderedIcon</key>
-				<true/>
-				<key>CFBundleIconFiles</key>
-				<array>
-    		  <!-- The actual filenames. Don't list the @2x/@3x files here -->
-					<string>icon-blue-50</string>
-					<string>icon-blue-57</string>
-					<string>icon-blue-60</string>
-					<string>icon-blue-72</string>
-					<string>icon-blue-76</string>
-				</array>
-			</dict>
-		</dict>
+  <key>CFBundleIcons</key>
+  <dict>
+    <key>CFBundleAlternateIcons</key>
+    <dict>
+      <!-- The name you use in code -->
+      <key>icon-blue</key>
+      <dict>
+        <key>UIPrerenderedIcon</key>
+        <true/>
+        <key>CFBundleIconFiles</key>
+        <array>
+          <!-- The actual filenames. Don't list the @2x/@3x files here -->
+          <string>icon-blue-50</string>
+          <string>icon-blue-57</string>
+          <string>icon-blue-60</string>
+          <string>icon-blue-72</string>
+          <string>icon-blue-76</string>
+        </array>
+      </dict>
+    </dict>
   </dict>
 
 </dict>
 </plist>
 ```
 
-Confused? Look at [the demo app](https://github.com/EddyVerbruggen/nativescript-app-icon-changer/tree/master/demo) to see the gory details.
+Confused? Look at [the demo app](https://github.com/EddyVerbruggen/nativescript-app-icon-changer/tree/master/demo/app/App_Resources/iOS) to see the gory details.
 
