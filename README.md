@@ -15,7 +15,7 @@
 
 <img src="https://github.com/EddyVerbruggen/nativescript-app-icon-changer/raw/master/media/demo.gif" width="338px" height="604px" />
 
-_That's [the demo app](https://github.com/EddyVerbruggen/nativescript-app-icon-changer/tree/master/demo) in action, switching app icons like a boss!
+> That's [the demo app](https://github.com/EddyVerbruggen/nativescript-app-icon-changer/tree/master/demo) in action, switching app icons like a boss!
 
 ## Installation
 ```bash
@@ -25,7 +25,7 @@ tns plugin add nativescript-app-icon-changer
 ## API
 
 ### requiring / importing the plugin
-All examples below assume you're using TypeScript, but here's how to require the plugin with plain old JS as well:
+All examples below assume you're using TypeScript, but here's how to require the plugin with regular JS as well:
 
 #### JavaScript
 ```js
@@ -56,14 +56,11 @@ this.appIconChanger.isSupported().then(
 
 
 ### `changeIcon`
-Changing the app icon is only allowed when the app is in the foreground,
-so forget about that weather app which silently updates its app icon.
+To be able to switch to a different icon add it to `App_Resources/iOS` and `App_Resources/iOS/Info.plist` as explained below and pass `iconName` to `changeIcon`.
 
-To be able to switch to a different icon add it to `App_Resources/iOS` and `App_Resources/iOS/Info.plist`
-as explained below and pass `iconName` to `changeIcon`.
+Note 1: iOS will notify the user the icon changed, but this plugin allows you to suppress that message (it's the default even). It's probably not what Apple would like you to do, but no apps have been disapproved with suppression enabled.
 
-Please note: iOS will notify the user the icon changed, but this plugin allows you to suppress that message (it's the default even).
-It's probably not what Apple would like you to do, but no apps have been disapproved with suppression enabled.
+Note 2: Changing the app icon is only allowed when the app is in the foreground, so forget about that weather app which silently updates its app icon.
 
 ```typescript
 this.appIconChanger.changeIcon({
@@ -77,7 +74,7 @@ Apple doesn't allow switching to arbitrary icons, so they must be bundled with y
 
 Add the icons you'd like your users to be able to switch to for all relevant resolutions as usual:
  
-<img src="https://github.com/EddyVerbruggen/nativescript-app-icon-changer/tree/master/media/icon-listing.png" width="236px" height="266px" />
+<img src="https://github.com/EddyVerbruggen/nativescript-app-icon-changer/raw/master/media/icon-listing.png" width="236px" height="266px" />
 
 Then reference those icons in `App_Resources/iOS/Info.plist` as well:
 
