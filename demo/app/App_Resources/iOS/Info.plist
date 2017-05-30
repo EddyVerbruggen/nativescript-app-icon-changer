@@ -54,7 +54,6 @@
 				<true/>
 				<key>CFBundleIconFiles</key>
 				<array>
-					<string>icon-50</string>
 					<string>icon-57</string>
 					<string>icon-60</string>
 					<string>icon-72</string>
@@ -67,7 +66,6 @@
 				<true/>
 				<key>CFBundleIconFiles</key>
 				<array>
-					<string>icon-red-50</string>
 					<string>icon-red-57</string>
 					<string>icon-red-60</string>
 					<string>icon-red-72</string>
@@ -80,7 +78,6 @@
 				<true/>
 				<key>CFBundleIconFiles</key>
 				<array>
-					<string>icon-blue-50</string>
 					<string>icon-blue-57</string>
 					<string>icon-blue-60</string>
 					<string>icon-blue-72</string>
@@ -93,7 +90,6 @@
 				<true/>
 				<key>CFBundleIconFiles</key>
 				<array>
-					<string>icon-green-50</string>
 					<string>icon-green-57</string>
 					<string>icon-green-60</string>
 					<string>icon-green-72</string>
@@ -106,11 +102,8 @@
 				<true/>
 				<key>CFBundleIconFiles</key>
 				<array>
-					<string>icon-yellow-50</string>
-					<string>icon-yellow-57</string>
-					<string>icon-yellow-60</string>
-					<string>icon-yellow-72</string>
-					<string>icon-yellow-76</string>
+				  <!-- this shows you don't NEED to supply all resolutions; Apple will scale down for you when needed -->
+					<string>icon-yellow-152</string>
 				</array>
 			</dict>
 			<key>icon-purple</key>
@@ -119,10 +112,71 @@
 				<true/>
 				<key>CFBundleIconFiles</key>
 				<array>
-					<string>icon-purple-50</string>
 					<string>icon-purple-57</string>
 					<string>icon-purple-60</string>
 					<string>icon-purple-72</string>
+					<string>icon-purple-76</string>
+				</array>
+			</dict>
+		</dict>
+  </dict>
+
+  <!-- For iPad we're simply specifying 1 resolution, to show that that works as well (just use a large one, iOS will scale it down) -->
+	<key>CFBundleIcons~ipad</key>
+	<dict>
+		<key>CFBundleAlternateIcons</key>
+		<dict>
+			<key>icon</key>
+			<dict>
+				<key>UIPrerenderedIcon</key>
+				<true/>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>icon-76</string>
+				</array>
+			</dict>
+			<key>icon-red</key>
+			<dict>
+				<key>UIPrerenderedIcon</key>
+				<true/>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>icon-red-76</string>
+				</array>
+			</dict>
+			<key>icon-blue</key>
+			<dict>
+				<key>UIPrerenderedIcon</key>
+				<true/>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>icon-blue-76</string>
+				</array>
+			</dict>
+			<key>icon-green</key>
+			<dict>
+				<key>UIPrerenderedIcon</key>
+				<true/>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>icon-green-76</string>
+				</array>
+			</dict>
+			<key>icon-yellow</key>
+			<dict>
+				<key>UIPrerenderedIcon</key>
+				<true/>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>icon-yellow-152</string>
+				</array>
+			</dict>
+			<key>icon-purple</key>
+			<dict>
+				<key>UIPrerenderedIcon</key>
+				<true/>
+				<key>CFBundleIconFiles</key>
+				<array>
 					<string>icon-purple-76</string>
 				</array>
 			</dict>

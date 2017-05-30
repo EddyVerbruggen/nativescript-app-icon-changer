@@ -72,7 +72,9 @@ this.appIconChanger.changeIcon({
 ## Preparing your app for icon switching
 Apple doesn't allow switching to arbitrary icons, so they must be bundled with your app before releasing the app to the store.
 
-Add the icons you'd like your users to be able to switch to for all relevant resolutions as usual:
+Add the icons you'd like your users to be able to switch to for all relevant resolutions as usual.
+
+> Note that you DON'T NEED to provide all those resolutions; you could get away with adding just the largest resolution and refer to it in the plist file. iOS will scale it down to other resolutions for you.
  
 <img src="https://github.com/EddyVerbruggen/nativescript-app-icon-changer/raw/master/media/icon-listing.png" width="236px" height="266px" />
 
@@ -95,7 +97,6 @@ Then reference those icons in `App_Resources/iOS/Info.plist` as well:
         <key>CFBundleIconFiles</key>
         <array>
           <!-- The actual filenames. Don't list the @2x/@3x files here -->
-          <string>icon-blue-50</string>
           <string>icon-blue-57</string>
           <string>icon-blue-60</string>
           <string>icon-blue-72</string>
@@ -109,5 +110,6 @@ Then reference those icons in `App_Resources/iOS/Info.plist` as well:
 </plist>
 ```
 
-Confused? Look at [the demo app](https://github.com/EddyVerbruggen/nativescript-app-icon-changer/tree/master/demo/app/App_Resources/iOS) to see the gory details.
+> Need iPad support as well? Just duplicate that plist config and change `<key>CFBundleIcons</key>` to `<key>CFBundleIcons~ipad</key>`.
 
+Want to see this configured in an actual project? Look at [the demo app](https://github.com/EddyVerbruggen/nativescript-app-icon-changer/tree/master/demo/app/App_Resources/iOS) to see the gory details.
