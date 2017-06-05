@@ -1,6 +1,5 @@
 import {Observable} from 'data/observable';
 import {AppIconChanger} from 'nativescript-app-icon-changer';
-import * as application from "application";
 
 export class HelloWorldModel extends Observable {
   private appIconChanger: AppIconChanger;
@@ -44,6 +43,6 @@ export class HelloWorldModel extends Observable {
     }, (error: any) => {
       console.log(`Error code: ${error.code}`);
       console.log(`Error message: ${error.message}`);
-    })
+    });
   }
 }
