@@ -2,4 +2,3 @@
 *.ts
 !*.d.ts
 tsconfig.json
-platforms/ios_lib

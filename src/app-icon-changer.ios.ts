@@ -5,7 +5,7 @@ import { topmost } from "tns-core-modules/ui/frame";
 export class AppIconChanger implements AppIconChangerApi {
   _supportsAlternateIcons(): boolean {
     // available since iOS 10.3
-    return application.ios.nativeApp.supportsAlternateIcons();
+    return application.ios.nativeApp.supportsAlternateIcons;
   }
 
   _suppressUserNotification(): void {
