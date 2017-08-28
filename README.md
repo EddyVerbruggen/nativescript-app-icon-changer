@@ -54,7 +54,6 @@ this.appIconChanger.isSupported().then(
     supported => console.log(`Supported: ${supported}`));
 ```
 
-
 ### `changeIcon`
 To be able to switch to a different icon add it to `App_Resources/iOS` and `App_Resources/iOS/Info.plist` as explained below and pass `iconName` to `changeIcon`.
 
@@ -67,6 +66,14 @@ this.appIconChanger.changeIcon({
   iconName: "icon-blue",
   suppressUserNotification: true
 });
+```
+
+### `currentAlternateIcon`
+Want to know whether or not the app currently has an alternate icon configured? And if so, what its name is? Then use this:
+
+```typescript
+// synchronous
+const currentAppIconName: string = this.appIconChanger.currentAlternateIcon();
 ```
 
 ## Preparing your app for icon switching
