@@ -22,6 +22,10 @@ export class AppIconChanger implements AppIconChangerApi {
     });
   }
 
+  currentAlternateIcon(): string {
+    return this._supportsAlternateIcons() ? application.ios.nativeApp.alternateIconName : null;
+  }
+
   changeIcon(options: AppIconChangeOptions): Promise<any> {
     return new Promise((resolve, reject) => {
       try {
