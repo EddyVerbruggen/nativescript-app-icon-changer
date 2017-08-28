@@ -1,6 +1,6 @@
 {
   "name": "nativescript-app-icon-changer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Change the homescreen icon of your app from code",
   "main": "app-icon-changer",
   "typings": "index.d.ts",

@@ -8,6 +8,7 @@ export class HelloWorldModel extends Observable {
   constructor() {
     super();
     this.appIconChanger = new AppIconChanger();
+    console.log("Current alternate icon: " + this.appIconChanger.currentAlternateIcon());
   }
 
   public changeIconRed(): void {
