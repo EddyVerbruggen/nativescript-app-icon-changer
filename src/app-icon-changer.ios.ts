@@ -24,32 +24,39 @@ export class AppIconChanger implements AppIconChangerApi {
 
   changeIcon(options: AppIconChangeOptions): Promise<any> {
     return new Promise((resolve, reject) => {
-      if (!this.isSupported()) {
-        reject("This version of iOS doesn't support alternate icons");
-        return;
-      }
+      try {
+        if (!this.isSupported()) {
+          reject("This version of iOS doesn't support alternate icons");
+          return;
+        }
 
-      if (!options.iconName) {
-        reject("The 'iconName' parameter is mandatory");
-        return;
-      }
+        if (!options.iconName) {
+          reject("The 'iconName' parameter is mandatory");
+          return;
+        }
 
-      // note that this icon must be listed in the app's plist
-      application.ios.nativeApp.setAlternateIconNameCompletionHandler(
-          options.iconName,
-          (error? : NSError) => {
-            if (error !== null) {
-              reject({
-                code: error.code,
-                message: error.localizedDescription
-              });
-            } else {
-              resolve();
-            }
-          });
+        // note that this icon must be listed in the app's plist
+        application.ios.nativeApp.setAlternateIconNameCompletionHandler(
+            options.iconName,
+            (error?: NSError) => {
+              if (error !== null) {
+                reject({
+                  code: error.code,
+                  message: error.localizedDescription
+                });
+              } else {
+                resolve();
+              }
+            });
 
-      if (options.suppressUserNotification !== false) {
-        this._suppressUserNotification();
+        if (options.suppressUserNotification !== false) {
+          this._suppressUserNotification();
+        }
+      } catch (e) {
+        reject({
+          code: -1,
+          message: e
+        });
       }
     });
   }
