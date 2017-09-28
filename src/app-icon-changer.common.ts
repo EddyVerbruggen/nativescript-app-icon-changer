@@ -14,6 +14,6 @@ export interface AppIconChangeOptions {
 
 export interface AppIconChangerApi {
   isSupported(): Promise<boolean>;
-  changeIcon(options: AppIconChangeOptions): Promise<any>;
+  changeIcon(options?: AppIconChangeOptions): Promise<any>;
   currentAlternateIcon(): string;
 }

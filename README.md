@@ -57,13 +57,15 @@ this.appIconChanger.isSupported().then(
 ### `changeIcon`
 To be able to switch to a different icon add it to `App_Resources/iOS` and `App_Resources/iOS/Info.plist` as explained below and pass `iconName` to `changeIcon`.
 
+To reset to the default icon, use `iconName: null`.
+
 Note 1: iOS will notify the user the icon changed, but this plugin allows you to suppress that message (it's the default even). It's probably not what Apple would like you to do, but no apps have been disapproved with suppression enabled.
 
 Note 2: Changing the app icon is only allowed when the app is in the foreground, so forget about that weather app which silently updates its app icon.
 
 ```typescript
 this.appIconChanger.changeIcon({
-  iconName: "icon-blue",
+  iconName: "icon-blue", // or null to reset to the default
   suppressUserNotification: true
 });
 ```

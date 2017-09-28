@@ -32,10 +32,10 @@ export class HelloWorldModel extends Observable {
   }
 
   public changeIconDefault(): void {
-    this.changeIcon('icon');
+    this.changeIcon(null);
   }
 
-  private changeIcon(name: string): void {
+  private changeIcon(name: string | null): void {
     this.appIconChanger.changeIcon({
       iconName: name,
       suppressUserNotification: !this.showFeedback // default true

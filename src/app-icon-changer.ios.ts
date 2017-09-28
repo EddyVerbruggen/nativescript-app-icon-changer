@@ -26,7 +26,7 @@ export class AppIconChanger implements AppIconChangerApi {
     return this._supportsAlternateIcons() ? application.ios.nativeApp.alternateIconName : null;
   }
 
-  changeIcon(options: AppIconChangeOptions): Promise<any> {
+  changeIcon(options?: AppIconChangeOptions): Promise<any> {
     return new Promise((resolve, reject) => {
       try {
         if (!this.isSupported()) {
@@ -34,14 +34,9 @@ export class AppIconChanger implements AppIconChangerApi {
           return;
         }
 
-        if (!options.iconName) {
-          reject("The 'iconName' parameter is mandatory");
-          return;
-        }
-
         // note that this icon must be listed in the app's plist
         application.ios.nativeApp.setAlternateIconNameCompletionHandler(
-            options.iconName,
+            options ? options.iconName : null,
             (error?: NSError) => {
               if (error !== null) {
                 reject({
